@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite1" thread-count="1">
+
+
+    <parameter name="email" value=" "></parameter>
+    <parameter name="orderReference" value="123321"></parameter>
+    <parameter name="message" value="Poruka! CAOOOOOO"></parameter>
+    <parameter name="subjectHeaderValue" value="1"></parameter>
+    <parameter name="errorMessage" value="Invalid email address."></parameter>
+    <parameter name="errorBoxSelector" value=".alert.alert-danger"></parameter>
+    <parameter name="boxColor" value="rgba(243, 81, 92, 1)"></parameter>
+    <parameter name="successMessageSelector" value=""></parameter>
+    <parameter name="textSelector" value=".alert.alert-danger>ol>li"></parameter>
+
+
+
+    
+
+    <test name="ContactUs_EmptyEmail">
+        <parameter name="email" value=" "></parameter>
+        <classes>
+            <class name="WithParamsTestNG"></class>
+        </classes>
+    </test>
+    <test name="ContactUs_InvalidEmail">
+        <parameter name="email" value="qweq"></parameter>
+        <classes>
+            <class name="WithParamsTestNG"></class>
+        </classes>
+    </test>
+    <test name="ContactUs_SubjectHeadingZero">
+        <parameter name="email" value="qweqwe@gmail.com"></parameter>
+        <parameter name="subjectHeaderValue" value="0"></parameter>
+        <parameter name="errorMessage" value="Please select a subject from the list provided."></parameter>
+        <classes>
+            <class name="WithParamsTestNG"></class>
+        </classes>
+    </test>
+    <test name="ContactUs_EmptyMessage">
+        <parameter name="email" value="qweqwe@gmail.com"></parameter>
+        <parameter name="message" value=""></parameter>
+        <parameter name="errorMessage" value="The message cannot be blank."></parameter>
+        <classes>
+            <class name="WithParamsTestNG"></class>
+        </classes>
+    </test>
+    <test name="ContactUs_OK">
+        <parameter name="email" value="qweqwe@gmail.com"></parameter>
+        <parameter name="message" value="vdsfb"></parameter>
+        <parameter name="errorMessage" value="Your message has been successfully sent to our team."></parameter>
+        <parameter name="errorBoxSelector" value=".alert.alert-success"></parameter>
+        <parameter name="boxColor" value="rgba(85, 198, 94, 1)"></parameter>
+        <parameter name="textSelector" value=".alert.alert-success"></parameter>
+        <classes>
+            <class name="WithParamsTestNG"></class>
+        </classes>
+    </test>
+
+
+</suite>
